@@ -1,3 +1,7 @@
 .idea
 Vagrantfile
 install.sh
+venv
+output
+.vagrant
+ubuntu-bionic-18.04-cloudimg-console.log
