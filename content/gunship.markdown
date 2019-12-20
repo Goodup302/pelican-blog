@@ -1,22 +1,11 @@
-title: Gunship
-slug: gunship
+title: Hello world 2
+slug: hello-world-2
 category: bands
 date: 2017-06-09
 modified: 2017-06-09
 
+hello-world 2
+Generating fancy text
+So perhaps, you've generated some fancy text, and you're content that you can now copy and paste your fancy text in the comments section of funny cat videos, but perhaps you're wondering how it's even possible to change the font of your text? Is it some sort of hack? Are you copying and pasting an actual font?
 
-[Gunship](https://www.gunshipmusic.com/) is a *retro synthwave* artist out of the UK.
-
-[Revel in Your Time](https://www.youtube.com/watch?v=uYRZV8dV10w), 
-[Tech Noir](https://www.youtube.com/watch?v=-nC5TBv3sfU), 
-[Fly for Your Life](https://www.youtube.com/watch?v=Jv1ZN8c4_Gs) 
-and 
-[The Mountain](https://www.youtube.com/watch?v=-HYRTJr8EyA) 
-are all quality songs by Gunship. Check out those amazing music videos!
-
-Also take a look at other retro synthwave artists such as
-[Trevor Something](https://trevorsomething.bandcamp.com/), 
-[Droid Bishop](https://droidbishop.bandcamp.com/),
-[FM-84](https://fm84.bandcamp.com/)
-and 
-[Daniel Deluxe](https://danieldeluxe.bandcamp.com/).
+Well, the answer is actually no - rather than generating fancy fonts, this converter creates fancy symbols. The explanation starts with unicode; an industry standard which creates the specification for thousands of different symbols and characters. All the characters that you see on your electronic devices, and printed in books, are likely specified by the unicode standard.

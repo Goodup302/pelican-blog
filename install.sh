@@ -4,6 +4,9 @@ apt-get upgrade -y
 apt-get install -y python-virtualenv python-dev python-pip
 apt-get install -y pelican markdown
 
+apt-get install -y curl openssh-server ca-certificates postfix gitlab-ce
+
+
 pip install typogrify
 
 apt-get remove -y docker docker-engine docker.io
