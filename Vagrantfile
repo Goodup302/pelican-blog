@@ -6,4 +6,8 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", ip: "192.168.33.10"
   config.vm.provision "shell", path: "install.sh"
   config.vm.synced_folder ".", "/home/vagrant/pelican-test"
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 8192
+    v.cpus = 4
+  end
 end

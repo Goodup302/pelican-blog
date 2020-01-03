@@ -1,11 +1,21 @@
-# This file is a template, and might need editing before it works on your project.
-# Full project: https://gitlab.com/pages/pelican
 image: python:2.7-alpine
 
-pages:
+before_script:
+  - hugo version
+
+github_pages:
   script:
-    - pip install -r requirements.txt
-    - pelican -s publishconf.py
+  - rm -rf public
+  - git clone --depth 1 https://github.com/Goodup302/pelican-blog.git public
+  - hugo --config config.production.toml
+  - cd public
+  - git config user.email "j.f0471430704@gmail.com"
+  - git config --global user.name "Goodup302"
+  - git add -A
+  - git commit -m "Build from $CI_SERVER_NAME $CI_PIPELINE_ID"
+  - git push
   artifacts:
     paths:
-      - public/
+    - public
+  only:
+  - master
