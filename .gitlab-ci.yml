@@ -4,7 +4,7 @@ before_script:
   - apt-get update -y
   - apt-get upgrade -y
   - apt autoremove -y
-  - apt-get install -y python-virtualenv python-dev python-pip
+  - apt-get install -y python-virtualenv python-dev python-pip git
   - DEBIAN_FRONTEND=noninteractive apt-get install -y pelican markdown
   - pip install typogrify
   - git clone --recursive https://github.com/nasskach/pelican-blueidea.git ~/pelican-themes/blueidea
