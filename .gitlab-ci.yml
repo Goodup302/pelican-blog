@@ -1,13 +1,9 @@
 image: python:2.7-alpine
 
-before_script:
-  - hugo version
-
 github_pages:
   script:
   - rm -rf public
   - git clone --depth 1 https://github.com/Goodup302/pelican-blog.git public
-  - hugo --config config.production.toml
   - cd public
   - git config user.email "j.f0471430704@gmail.com"
   - git config --global user.name "Goodup302"
