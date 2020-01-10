@@ -2,6 +2,8 @@ image: ubuntu:18.04
 
 before_script:
   - apt-get update -y
+  - apt-get upgrade -y
+  - apt autoremove -y
   - apt-get install -y pelican markdown
   - pip install typogrify
   - git clone --recursive https://github.com/nasskach/pelican-blueidea.git ~/pelican-themes/blueidea
