@@ -19,5 +19,4 @@ github_pages:
     - cd output
     - git add -A
     - git commit -m "Build from $CI_SERVER_NAME $CI_PIPELINE_ID"
-    - git remote add origin https://github.com/Goodup302/pelican-blog.git
     - git push -u origin master
