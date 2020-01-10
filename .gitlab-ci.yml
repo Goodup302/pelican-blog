@@ -4,7 +4,7 @@ before_script:
   - apt-get update -y
   - apt-get upgrade -y
   - apt autoremove -y
-  - apt-get install -y pelican markdown
+  - apt-get install -y pelican markdown & echo -en "8\n"
   - pip install typogrify
   - git clone --recursive https://github.com/nasskach/pelican-blueidea.git ~/pelican-themes/blueidea
   - pelican-themes --install ~/pelican-themes/blueidea --verbose
