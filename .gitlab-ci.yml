@@ -23,5 +23,5 @@ github_pages:
     - git commit -m "Build from $CI_SERVER_NAME $CI_PIPELINE_ID"
     - git push github master --force
   artifacts:
-      paths:
+    paths:
       - output
