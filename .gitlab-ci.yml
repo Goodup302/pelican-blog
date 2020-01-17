@@ -18,9 +18,8 @@ github_pages:
     - git clone --depth 1 https://Goodup302:$GITHUB_ACCESS_TOKEN@github.com/Goodup302/pelican-blog.git output
     - git remote add github https://Goodup302:$GITHUB_ACCESS_TOKEN@github.com/Goodup302/pelican-blog.git
     - make clean && make html
-    - ls
     - cd output
-    - ls
+    - git branch -mv github master
     - git add --all
     - git commit -m "Build from $CI_SERVER_NAME $CI_PIPELINE_ID"
     - git push -u github master --force
