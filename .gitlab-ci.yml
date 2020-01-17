@@ -18,9 +18,10 @@ github_pages:
     - git clone --depth 1 https://github.com/Goodup302/pelican-blog.git output
     - make clean && make html
     - cd output
+    - git remote add github https://github.com/Goodup302/pelican-blog.git
     - git add -A
     - git commit -m "Build from $CI_SERVER_NAME $CI_PIPELINE_ID"
-    - git push
+    - git push -u github master --force
   artifacts:
       paths:
       - output
