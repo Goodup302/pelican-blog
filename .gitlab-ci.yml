@@ -15,7 +15,7 @@ before_script:
 github_pages:
   script:
     - rm -rf output
-    - git clone --depth 1 https://Goodup302:$GITHUB_ACCESS_TOKENgithub.com/Goodup302/pelican-blog.git output
+    - git clone --depth 1 https://Goodup302:$GITHUB_ACCESS_TOKEN@github.com/Goodup302/pelican-blog.git output
     - make clean && make html
     - cd output
     - git remote add github https://github.com/Goodup302/pelican-blog.git
