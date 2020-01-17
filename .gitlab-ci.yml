@@ -20,7 +20,7 @@ github_pages:
     - cd output
     - git add -A
     - git commit -m "Build from $CI_SERVER_NAME $CI_PIPELINE_ID"
-    - git push -u origin master
+    - git push
   artifacts:
       paths:
       - output
