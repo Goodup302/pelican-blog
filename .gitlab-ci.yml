@@ -14,9 +14,13 @@ before_script:
 
 github_pages:
   script:
+    - rm -rf output
     - git clone --depth 1 https://github.com/Goodup302/pelican-blog.git output
     - make clean && make html
     - cd output
     - git add -A
     - git commit -m "Build from $CI_SERVER_NAME $CI_PIPELINE_ID"
     - git push -u origin master
+  artifacts:
+      paths:
+      - output
