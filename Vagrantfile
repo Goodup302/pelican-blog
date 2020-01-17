@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "install.sh"
   config.vm.synced_folder ".", "/home/vagrant/pelican-test"
   config.vm.provider "virtualbox" do |v|
-    v.memory = 2048
+    v.memory = 8500
     v.cpus = 4
     v.name = "pelican-gitlab"
   end
