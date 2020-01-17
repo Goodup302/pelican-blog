@@ -1,3 +1,4 @@
+dpkg --configure -a
 apt-get update -y
 apt-get upgrade -y
 apt autoremove -y
@@ -17,14 +18,17 @@ make clean && make html
 #nohup sudo make serve-global &
 
 #Gitlab
-apt-get install -y ca-certificates curl openssh-server
-cd /tmp
-curl -LO https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh
-bash /tmp/script.deb.sh
-apt install gitlab-ce -y
-ufw allow http && ufw allow https && ufw allow OpenSSH
+apt-get install -y curl openssh-server ca-certificates
+debconf-set-selections <<< "postfix postfix/mailname string gitlab.local"
+debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'"
+apt-get install --assume-yes postfix
+ufw allow http
 
-#gitlab-ctl reconfigure
-#sudo nano /etc/gitlab/gitlab.rb      #external_url 'http://gitlab.example.com'
+curl -s https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
+apt-get install gitlab-ce -y
+gitlab-ctl reconfigure
+
+#sudo gitlab-ctl restart
+#ufw allow https && ufw allow OpenSSH
 #Generate ssh key
 #echo -en "\ny"| ssh-keygen -P ''
