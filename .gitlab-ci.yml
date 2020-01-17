@@ -19,7 +19,7 @@ github_pages:
     - git remote add github https://Goodup302:$GITHUB_ACCESS_TOKEN@github.com/Goodup302/pelican-blog.git
     - make clean && make html
     - cd output
-    - git add -A
+    - git add --all
     - git commit -m "Build from $CI_SERVER_NAME $CI_PIPELINE_ID"
     - git push -u github master --force
   artifacts:
