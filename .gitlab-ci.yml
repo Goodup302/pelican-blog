@@ -1,6 +1,7 @@
 image: ubuntu:18.04
 
 before_script:
+  - echo $GITHUB_ACCESS_TOKEN
   - apt-get update -y
   - apt-get upgrade -y
   - apt autoremove -y

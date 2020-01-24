@@ -57,6 +57,7 @@ docker run -d --name gitlab-runner --restart always \
     gitlab/gitlab-runner:latest
 
 gitlab-ci-multi-runner register
+#http://127.0.0.1
 
 #letsencrypt certonly --standalone --agree-tos --no-eff-email --agree-tos --email j.f0471430704@gmail.com -d gitlab.goodup302.local
 #mkdir -p /etc/gitlab/ssl/
