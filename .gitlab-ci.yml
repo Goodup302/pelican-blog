@@ -12,7 +12,7 @@ before_script:
   - git clone --recursive https://github.com/nasskach/pelican-blueidea.git ~/pelican-themes/blueidea
   - pelican-themes --install ~/pelican-themes/blueidea --verbose
 
-github_pages
+github_pages:
   script:
     - rm -rf output
     - git clone --depth 1 https://Goodup302:$GITHUB_ACCESS_TOKEN@github.com/Goodup302/pelican-blog.git output
