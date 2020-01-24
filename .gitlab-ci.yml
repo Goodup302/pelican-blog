@@ -5,8 +5,6 @@ before_script:
   - apt-get upgrade -y
   - apt autoremove -y
   - apt-get install -y python-virtualenv python-dev python-pip git
-  - git config user.email "j.f0471430704@gmail.com"
-  - git config --global user.name "Goodup302"
   - DEBIAN_FRONTEND=noninteractive apt-get install -y pelican markdown
   - pip install typogrify
   - git clone --recursive https://github.com/nasskach/pelican-blueidea.git ~/pelican-themes/blueidea
@@ -15,9 +13,10 @@ before_script:
 github_pages:
   script:
     - rm -rf output
+    - git config user.email "j.f0471430704@gmail.com"
+    - git config --global user.name "Goodup302"
     - git clone --depth 1 https://Goodup302:$GITHUB_ACCESS_TOKEN@github.com/Goodup302/pelican-blog.git output
     - git remote add github https://Goodup302:$GITHUB_ACCESS_TOKEN@github.com/Goodup302/pelican-blog.git
-    - rm -rd output/*
     - make clean && make html
     - cd output
     - git add --all
