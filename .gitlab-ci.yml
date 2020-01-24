@@ -1,7 +1,6 @@
 image: ubuntu:18.04
 
 before_script:
-  - echo $GITHUB_ACCESS_TOKEN
   - apt-get update -y
   - apt-get upgrade -y
   - apt autoremove -y
@@ -13,16 +12,17 @@ before_script:
   - git clone --recursive https://github.com/nasskach/pelican-blueidea.git ~/pelican-themes/blueidea
   - pelican-themes --install ~/pelican-themes/blueidea --verbose
 
-github_pages:
+github_pages
   script:
     - rm -rf output
     - git clone --depth 1 https://Goodup302:$GITHUB_ACCESS_TOKEN@github.com/Goodup302/pelican-blog.git output
     - git remote add github https://Goodup302:$GITHUB_ACCESS_TOKEN@github.com/Goodup302/pelican-blog.git
+    - rm -rd output/*
     - make clean && make html
     - cd output
     - git add --all
     - git commit -m "Build from $CI_SERVER_NAME $CI_PIPELINE_ID"
-    - git push -u github master --force
+    - git push -u github HEAD:master --force
   artifacts:
     paths:
       - output
